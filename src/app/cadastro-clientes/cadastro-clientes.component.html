@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="box-cadastro">
+      <h3 class="text-center">Você está a um passo de criar sua conta Training Banking</h3>
+      <form class="mt-5" [formGroup]="registerForm">
+        <div class="form-group">
+          <input type="text" formControlName="nome_registro" class="form-control cadastro" aria-describedby="emailHelp"
+            placeholder="Nome">
+        </div>
+        <div class="form-group">
+          <input type="text" formControlName="cpf_registro" class="form-control cadastro" placeholder="CPF">
+        </div>
+        <div class="form-group">
+          <input type="email" formControlName="email_registro" class="form-control cadastro" placeholder="E-mail">
+        </div>
+        <div class="form-group">
+          <input type="tel" formControlName="telefone_registro" class="form-control cadastro"  placeholder="Telefone"
+            mask="(00) 00000-0000">
+        </div>
+        <div class="form-group">
+          <input type="text" formControlName="endereco_registro" class="form-control cadastro" placeholder="Endereço">
+        </div>
+        <div class="container">
+        <div class="row">
+          <div class="col-md-6" >
+            <button type="submit" (click)="onSubmit()" class="btn btn-cadastro btn-sm">Cadastrar</button>
+          </div>
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-cadastro btn-sm">Cancelar</button>
+          </div>
+          </div>
+        </div>
+      </form>
+  </div>
+</div>
