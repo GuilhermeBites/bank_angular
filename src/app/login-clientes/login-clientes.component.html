@@ -1,0 +1,16 @@
+
+  <div class="box-login">
+      <h3 class="text-center">Faça o login no seu Internet Banking</h3>
+      <div class="login-page">
+          <div class="form">
+            <span class="logo-login">IB</span> <span style="color:#990000;"> <b>Training</b> </span>
+            <hr>
+            <form class="login-form" [formGroup]="loginForm">
+              <input formControlName="cpf_login" type="text" placeholder="CPF"/>
+              <input formControlName="senha_login" type="password" placeholder="Senha"/>
+              <button (click)="onSubmit()">login</button>
+              <p class="message">Não é registrado? <a style="cursor: pointer;" (click)="gotoCadastroClientes()">Criar uma conta</a></p>
+            </form>
+          </div>
+        </div>
+    </div>

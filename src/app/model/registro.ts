@@ -4,4 +4,5 @@ export class Registro {
     email_registro: string;
     telefone_registro: string;
     endereco_registro: string;
+    senha_registro: string;
 }

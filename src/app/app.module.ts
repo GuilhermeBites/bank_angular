@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HeaderComponent } from './header/header.component';
-import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { CadastroClientesComponent } from './cadastro-clientes/cadastro-clientes.component';
+import { HomeBankingComponent } from './home-banking/home-banking.component';
+import { LoginClientesComponent } from './login-clientes/login-clientes.component'
 import {NgxMaskModule} from 'ngx-mask';
 
 import { AngularFireStorage } from 'angularfire2/storage';
@@ -22,13 +23,16 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ContentComponent,
     FooterComponent,
-    CadastroClientesComponent
+    CadastroClientesComponent,
+    HomeBankingComponent,
+    LoginClientesComponent
   ],
   imports: [
     BrowserModule,

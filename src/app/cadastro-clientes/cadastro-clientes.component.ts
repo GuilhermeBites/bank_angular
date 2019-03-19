@@ -3,6 +3,8 @@ import { FirestoreDataService } from '../firestore-data.service';
 import { LoginService } from '../login.service';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Registro } from '../model/registro';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cadastro-clientes',
@@ -18,7 +20,8 @@ export class CadastroClientesComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     public loginService: LoginService,
-    private registroService: FirestoreDataService) { }
+    private registroService: FirestoreDataService,
+    private router: Router) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -26,7 +29,8 @@ export class CadastroClientesComponent implements OnInit {
       cpf_registro: [''],
       email_registro: [''],
       telefone_registro: [''],
-      endereco_registro: ['']
+      endereco_registro: [''],
+      senha_registro: ['']
     })
   }
 
@@ -43,19 +47,25 @@ export class CadastroClientesComponent implements OnInit {
       this.novoRegistro.endereco_registro = this.registerForm.value.endereco_registro;
       this.novoRegistro.telefone_registro = this.registerForm.value.telefone_registro;
       this.novoRegistro.email_registro = this.registerForm.value.email_registro;
+      this.novoRegistro.senha_registro = this.registerForm.value.senha_registro;
       
-      this.loginService.createUser(this.novoRegistro.email_registro, this.novoRegistro.cpf_registro).then((auth) => {
+      this.loginService.createUser(this.novoRegistro.email_registro, this.novoRegistro.senha_registro).then((auth) => {
         console.log('Printando: "auth"', auth);
         this.id = auth.user.uid;
-        this.registroService.createRegistro(this.novoRegistro, auth.user.uid).then((data) => {
-          console.log('Printando: "data"', data);
-        }).catch(error => {
-          console.log('Printando: "error"', error);
-        })
+        // this.registroService.createRegistro(this.novoRegistro, auth.user.uid).then((data) => {
+        //   console.log('Printando: "data"', data);
+        // }).catch(error => {
+        //   console.log('Printando: "error"', error);
+        // })
+        this.router.navigate(['']);
       }).catch(error => {
         console.log('Printando: "error"', error);
       })
     }
+  }
+
+  public goBack(){
+    this.router.navigate(['']);  
   }
 
 }

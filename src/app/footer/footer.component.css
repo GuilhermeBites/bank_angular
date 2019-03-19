@@ -19,3 +19,24 @@
     .rodape p {
     padding-top: 6px;
     }
+
+    a{
+        color: #f0f0f0;
+        text-decoration: none;
+    }
+    a:hover{
+        color: #fff;
+        font-weight: bold;
+    }
+
+    @media screen and (max-width: 768px) {
+        .topicos{
+            height: 100%;
+            width: 100%;
+            display: block;
+        }
+    }
+
+.wrapper{
+bottom: 0px !important;
+}

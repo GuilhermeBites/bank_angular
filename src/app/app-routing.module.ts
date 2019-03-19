@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ContentComponent } from './content/content.component';
 import { CadastroClientesComponent } from './cadastro-clientes/cadastro-clientes.component';
+import { LoginClientesComponent } from './login-clientes/login-clientes.component';
+import { HomeBankingComponent } from './home-banking/home-banking.component';
 
 
 const routes: Routes = [
-  { path: '', component: ContentComponent },
+  { path: '', component: HomeBankingComponent },
   { path: 'cadastro-clientes', component: CadastroClientesComponent },
+  { path: 'login-clientes', component: LoginClientesComponent},
   ];
 
 @NgModule({
